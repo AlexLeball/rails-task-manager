@@ -1,4 +1,13 @@
-
-<h2><%= @task.title%></h2>
-<p><%= @task.details %></p>
-<p><%= @task.completed %></p>
+<div class= "container w-50 mx-auto m-20">
+  <h1><%= @task.title%></h1>
+  <p><%= @task.details %></p>
+  <p><%= @task.completed %></p>
+  <%= link_to "See Your Tasks", tasks_path %>
+  <br>
+  <%= link_to "Edit Your Task", edit_task_path %>
+  <br>
+  <%= link_to "Delete",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>
